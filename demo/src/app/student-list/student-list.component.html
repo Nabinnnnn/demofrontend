@@ -1,0 +1,56 @@
+<hr>
+<h2>👩‍🎓 Student List 👨‍🎓</h2>
+<hr>
+
+<div class="row">
+    <div class="col-md-2">
+<button class="btn btn-warning" routerLink="/new">➕ New Student</button><br><br>
+    </div>
+    <div class="col-md-3">
+        <input class="form-control" [(ngModel)]="searchValue" placeholder="Enter the First Name">
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-success" (click)="search()">🔍 Search</button>
+    </div>
+</div>
+
+
+<div class="table-responsive mt-3">
+
+<table class="table table-striped table-bordered table-hover">
+    <thead >
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Gender</th>
+            <th>Dob</th>
+            <th>Status</th>
+            <th>Active</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of studentList">
+            <td>{{student.id}}</td>
+            <td>{{student.firstName}}</td>
+            <td>{{student.lastName}}</td>
+            <td>{{student.address}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.phoneNumber}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.dob}}</td>
+            <td>{{student.status}}</td>
+            <td>{{student.active}}</td>
+                <td><button class="btn btn-primary " title="Edit" [routerLink]="['/update/',student.id]"> ✏️ </button>
+          <button class="btn btn-danger m-lg-1" title="Delete" (click)="deleteStudent(student.id)"> 🗑 </button>
+        </td>
+            
+        </tr>
+    </tbody>
+</table>
+</div>

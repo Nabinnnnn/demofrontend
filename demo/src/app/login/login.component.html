@@ -1,0 +1,24 @@
+<div class="container">
+  
+    <div style="margin-top: 3px; color:black; background-color: beige; font-style: normal; font-size: x-large"><h2>Student Form</h2></div>
+      <hr>
+  
+  <form style="margin-left: 1px; color:rgb(13, 5, 57);" [formGroup]="(loginForm)" (ngSubmit)="login()">
+
+   
+      <div classs="form-group">
+        <label for="email">Email:</label><br>
+        <input class="form-control" type="email" id="email" formControlName="email"  placeholder="Enter a valid email.">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label><br>
+         <input  class="form-control" type="password" id="Password" formControlName="password" placeholder="Password" ></div>
+     
+     
+     <button class="btn btn-success  m-3" type="submit"[disabled]=loginForm.invalid>Login</button>
+     <button class="btn btn-warning m-3" routerLink="signup">Sign Up</button>
+      
+    
+  </form>
+  </div>
+     

@@ -1,0 +1,58 @@
+<div class="container">
+  
+  <div style="margin-top: 3px; color:black; background-color: beige; font-style: normal; font-size: x-large"><h2>Student Form</h2></div>
+    <hr>
+
+<form style="margin-left: 1px; color:rgb(13, 5, 57);" [formGroup]="(studentForm)" (ngSubmit)="saveStudent()">
+<div class="form-group">
+  <label for="firstName">First Name:</label><br>
+   <input  class="form-control" type="text" id="firstName" formControlName="firstName" placeholder="Enter your first name."></div>
+   <div class="form-group">
+    <label for="lastName">Last Name:</label><br>
+    <input class="form-control" type="text" id="lastName" formControlName="lastName" placeholder="Enter your last name."></div>
+    <div class="form-group">
+      <label for="address">Address:</label><br>
+      <input class="form-control" type="text" id="address" formControlName="address" placeholder="Enter house no.,street-address, city, state, country, zipcode.">
+    </div>
+    <div classs="form-group">
+      <label for="email">Email:</label><br>
+      <input class="form-control" type="email" id="email" formControlName="email"  placeholder="xyz@gmail.com">
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number:</label><br>
+      <input class="form-control" type="tel" id="phoneNumber" formControlName="phoneNumber"  placeholder="(123)-_ _ _-_ _ __">
+
+    </div>
+    <div class="form-group">
+      <label for="dob">Date of Birth:</label><br>
+      <input class="form-control" type="date" formControlName="dob"  id="dob" >
+
+    </div>
+   <div>
+    <label>Gender:</label><br>
+    <input type="radio" formControlName="gender" value="Male"> Male
+    <input  type="radio" formControlName="gender" value="Female">Female
+   </div>
+   <div class="form-group">
+    <label for="status">Status:</label><br>
+    <select style="color: olivedrab;" id="status"  formControlName="status" class="form-control" >
+      <option value="USC">USC</option>
+      <option value="F1">F1</option>
+      <option value="H1B">H1B</option>
+      <option value="GC">GC</option>
+      <option value="B1/B2">B1/B2</option>
+    </select>
+    
+
+   </div>
+   <div >
+    <label>Active:</label><br>
+    <input formControlName="active" type="checkbox" >
+   </div>
+   
+   <button class="btn btn-success  mt-3" type="submit">Save</button>
+    
+  
+</form>
+</div>
+   
